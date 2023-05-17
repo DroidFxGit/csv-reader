@@ -26,6 +26,7 @@ final class MainViewModelTests: XCTestCase {
         
         wait(for: [expectation], timeout: 0.5)
         XCTAssert(!viewModel.persons.isEmpty)
+        XCTAssertNil(viewModel.errorMessage)
     }
     
     func testThatViewModelFetchThrowsErrorWhenFileIsNotFound() throws {
@@ -40,6 +41,7 @@ final class MainViewModelTests: XCTestCase {
         
         wait(for: [expectation], timeout: 0.5)
         XCTAssert(viewModel.errorMessage == expectedMessage)
+        XCTAssertTrue(viewModel.persons.isEmpty)
     }
     
     func testThatViewModelFetchThrowsErrorWhenInfoIsCorrupted() throws {
@@ -54,5 +56,6 @@ final class MainViewModelTests: XCTestCase {
         
         wait(for: [expectation], timeout: 0.5)
         XCTAssert(viewModel.errorMessage != nil)
+        XCTAssertTrue(viewModel.persons.isEmpty)
     }
 }
