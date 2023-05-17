@@ -11,12 +11,20 @@ struct ContentView: View {
     @StateObject private var viewModel = MainViewModel()
     
     var body: some View {
-        if viewModel.isloading {
-            LoadingView()
-        } else if viewModel.errorMessage != nil {
-            ErrorView(viewModel: viewModel)
-        } else {
-            PersonListView(persons: viewModel.persons)
+        NavigationView {
+            if viewModel.isloading {
+                LoadingView()
+            } else if viewModel.errorMessage != nil {
+                ErrorView(viewModel: viewModel)
+            } else {
+                PersonListView(persons: viewModel.persons)
+            }
+        }.onAppear {
+            viewModel.isloading = true
+            //option can be executed directly, just simulates a heavy task
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                viewModel.getPersons()
+            }
         }
     }
 }

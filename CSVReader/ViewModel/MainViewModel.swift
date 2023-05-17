@@ -16,7 +16,6 @@ final class MainViewModel: ObservableObject {
     
     init(service: APIService = APIServiceConcrete()) {
         self.service = service
-        getPersons()
     }
     
     func getPersons() {
