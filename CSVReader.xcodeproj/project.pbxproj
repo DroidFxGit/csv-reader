@@ -19,7 +19,19 @@
 		52E3705D2A13132500C55038 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E3705C2A13132500C55038 /* ErrorView.swift */; };
 		52E370622A131EE800C55038 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E370612A131EE800C55038 /* LoadingView.swift */; };
 		52E370652A1451E200C55038 /* APIServiceConcrete.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E370642A1451E200C55038 /* APIServiceConcrete.swift */; };
+		52E370772A146AEA00C55038 /* APIServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E370762A146AEA00C55038 /* APIServiceMock.swift */; };
+		52E3707A2A146C8300C55038 /* MainViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E370792A146C8300C55038 /* MainViewModelTests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		52E3706E2A146A5E00C55038 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 52E370342A12FC9400C55038 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 52E3703B2A12FC9400C55038;
+			remoteInfo = CSVReader;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		52E3703C2A12FC9400C55038 /* CSVReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CSVReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -35,10 +47,20 @@
 		52E3705C2A13132500C55038 /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 		52E370612A131EE800C55038 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		52E370642A1451E200C55038 /* APIServiceConcrete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIServiceConcrete.swift; sourceTree = "<group>"; };
+		52E3706A2A146A5E00C55038 /* CSVReaderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CSVReaderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		52E370762A146AEA00C55038 /* APIServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIServiceMock.swift; sourceTree = "<group>"; };
+		52E370792A146C8300C55038 /* MainViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModelTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		52E370392A12FC9400C55038 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52E370672A146A5E00C55038 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -52,6 +74,7 @@
 			isa = PBXGroup;
 			children = (
 				52E3703E2A12FC9400C55038 /* CSVReader */,
+				52E3706B2A146A5E00C55038 /* CSVReaderTests */,
 				52E3703D2A12FC9400C55038 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -60,6 +83,7 @@
 			isa = PBXGroup;
 			children = (
 				52E3703C2A12FC9400C55038 /* CSVReader.app */,
+				52E3706A2A146A5E00C55038 /* CSVReaderTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -139,6 +163,31 @@
 			path = Service;
 			sourceTree = "<group>";
 		};
+		52E3706B2A146A5E00C55038 /* CSVReaderTests */ = {
+			isa = PBXGroup;
+			children = (
+				52E370782A146C6C00C55038 /* Tests */,
+				52E370752A146AD400C55038 /* Mocks */,
+			);
+			path = CSVReaderTests;
+			sourceTree = "<group>";
+		};
+		52E370752A146AD400C55038 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				52E370762A146AEA00C55038 /* APIServiceMock.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		52E370782A146C6C00C55038 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				52E370792A146C8300C55038 /* MainViewModelTests.swift */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -159,6 +208,24 @@
 			productReference = 52E3703C2A12FC9400C55038 /* CSVReader.app */;
 			productType = "com.apple.product-type.application";
 		};
+		52E370692A146A5E00C55038 /* CSVReaderTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 52E370722A146A5E00C55038 /* Build configuration list for PBXNativeTarget "CSVReaderTests" */;
+			buildPhases = (
+				52E370662A146A5E00C55038 /* Sources */,
+				52E370672A146A5E00C55038 /* Frameworks */,
+				52E370682A146A5E00C55038 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				52E3706F2A146A5E00C55038 /* PBXTargetDependency */,
+			);
+			name = CSVReaderTests;
+			productName = CSVReaderTests;
+			productReference = 52E3706A2A146A5E00C55038 /* CSVReaderTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -171,6 +238,10 @@
 				TargetAttributes = {
 					52E3703B2A12FC9400C55038 = {
 						CreatedOnToolsVersion = 14.0.1;
+					};
+					52E370692A146A5E00C55038 = {
+						CreatedOnToolsVersion = 14.0.1;
+						TestTargetID = 52E3703B2A12FC9400C55038;
 					};
 				};
 			};
@@ -188,6 +259,7 @@
 			projectRoot = "";
 			targets = (
 				52E3703B2A12FC9400C55038 /* CSVReader */,
+				52E370692A146A5E00C55038 /* CSVReaderTests */,
 			);
 		};
 /* End PBXProject section */
@@ -200,6 +272,13 @@
 				52E370552A12FE0D00C55038 /* issues.csv in Resources */,
 				52E370472A12FC9600C55038 /* Preview Assets.xcassets in Resources */,
 				52E370442A12FC9600C55038 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52E370682A146A5E00C55038 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -222,7 +301,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		52E370662A146A5E00C55038 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				52E370772A146AEA00C55038 /* APIServiceMock.swift in Sources */,
+				52E3707A2A146C8300C55038 /* MainViewModelTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		52E3706F2A146A5E00C55038 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 52E3703B2A12FC9400C55038 /* CSVReader */;
+			targetProxy = 52E3706E2A146A5E00C55038 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		52E370482A12FC9600C55038 /* Debug */ = {
@@ -397,6 +493,42 @@
 			};
 			name = Release;
 		};
+		52E370702A146A5E00C55038 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2692MDUFS2;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fx.reader.CSVReaderTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CSVReader.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/CSVReader";
+			};
+			name = Debug;
+		};
+		52E370712A146A5E00C55038 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2692MDUFS2;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fx.reader.CSVReaderTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CSVReader.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/CSVReader";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -414,6 +546,15 @@
 			buildConfigurations = (
 				52E3704B2A12FC9600C55038 /* Debug */,
 				52E3704C2A12FC9600C55038 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		52E370722A146A5E00C55038 /* Build configuration list for PBXNativeTarget "CSVReaderTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				52E370702A146A5E00C55038 /* Debug */,
+				52E370712A146A5E00C55038 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
