@@ -38,9 +38,6 @@ struct PersonListView: View {
 
 struct PersonListView_Previews: PreviewProvider {
     static var previews: some View {
-        PersonListView(persons: [.init(firstName: "Carlos",
-                                       surname: "Vazquez",
-                                       issueCount: 1,
-                                       dateBirth: "1978-01-02T00:00:00")])
+        PersonListView(persons: [.mockExample])
     }
 }

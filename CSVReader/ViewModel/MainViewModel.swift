@@ -12,22 +12,24 @@ final class MainViewModel: ObservableObject {
     @Published var isloading: Bool = false
     @Published var errorMessage: String? = nil
     
-    init() {
-        isloading = true
+    private var service: APIService
+    
+    init(service: APIService = APIServiceConcrete()) {
+        self.service = service
         getPersons()
     }
     
     func getPersons() {
         isloading = true
-        do {
-            persons = try BundleReader.getPersonArray(for: .issues)
-            errorMessage = nil
+        
+        service.fetch { [unowned self] result in
             isloading = false
-        } catch {
-            if let customError = error as? ErrorReader {
-                errorMessage = customError.localizedDescription
+            switch result {
+            case .success(let successResponse):
+                self.persons = successResponse
+            case .failure(let failure):
+                self.errorMessage = failure.localizedDescription
             }
-            isloading = false
         }
     }
 }
